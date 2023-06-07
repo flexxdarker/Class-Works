@@ -20,9 +20,51 @@ namespace _07._06._2023
     /// </summary>
     public partial class MainWindow : Window
     {
+        int countPeople = 0;
+        string typeofaparts = string.Empty;
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void RepeatButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(countPeople < 12)
+            {
+                countPeople+=1;
+                CountPeople.Content = countPeople;
+            }
+            else
+            {
+                countPeople = 0;
+                countPeople+=1;
+                CountPeople.Content = countPeople;
+            }
+        }
+
+        private void CountBTN_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show($"Name: {NameTB.Text}\nSurname: {SurnameTB.Text}\nPhone number: {PhoneTB.Text}\nCount of People: {countPeople}\nSelected Apartments: {typeofaparts}\nDate From: {Calendar.SelectedDates.First()}\nDate To: {Calendar.SelectedDates.Last()}");
+        }
+
+        private void ClearBTN_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Luxe_Click(object sender, RoutedEventArgs e)
+        {
+            typeofaparts = Luxe.ToString();
+        }
+
+        private void Standart_Click(object sender, RoutedEventArgs e)
+        {
+            typeofaparts = Standart.ToString();
+        }
+
+        private void Econom_Click(object sender, RoutedEventArgs e)
+        {
+            typeofaparts = Econom.ToString();
         }
     }
 }
