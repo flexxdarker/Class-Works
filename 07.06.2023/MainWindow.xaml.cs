@@ -49,22 +49,31 @@ namespace _07._06._2023
 
         private void ClearBTN_Click(object sender, RoutedEventArgs e)
         {
-
+            NameTB.Text = string.Empty;
+            SurnameTB.Text = string.Empty;
+            PhoneTB.Text = string.Empty;
+            countPeople = 0;
+            CountPeople.Content = countPeople;
+            Luxe.IsChecked = false;
+            Standart.IsChecked = false;
+            Econom.IsChecked = false;
+            typeofaparts = string.Empty;
+            Calendar.SelectedDate = DateTime.Now;
         }
 
         private void Luxe_Click(object sender, RoutedEventArgs e)
         {
-            typeofaparts = Luxe.ToString();
+            typeofaparts = "Luxe";
         }
 
         private void Standart_Click(object sender, RoutedEventArgs e)
         {
-            typeofaparts = Standart.ToString();
+            typeofaparts = "Standart";
         }
 
         private void Econom_Click(object sender, RoutedEventArgs e)
         {
-            typeofaparts = Econom.ToString();
+            typeofaparts = "Econom";
         }
     }
 }
